@@ -9,8 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-// Route::get('testing',function(){
-//     return 'this is a text api';
-// });
-
 Route::post('add-product',[ProductsController::class,'adding']);
+Route::put('edit-product', [ProductsController::class,'edit']);
+Route::delete('delete-product/{id}', [ProductsController::class, 'delete']);
+Route::get('getdata',[ProductsController::class,'getData']);
